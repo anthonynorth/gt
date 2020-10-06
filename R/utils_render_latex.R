@@ -62,7 +62,7 @@ create_table_start_l <- function(data) {
   }
 
   paste0(
-    "\\captionsetup[table]{labelformat=empty,skip=1pt}\n",
+    "\\captionsetup[table]{skip=0.5ex}\n",
     "\\begin{longtable}{",
     col_alignment %>% substr(1, 1) %>% paste(collapse = ""),
     "}\n",

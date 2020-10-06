@@ -11,6 +11,7 @@
 #'   the table subtitle. We can elect to use the [md()] and [html()] helper
 #'   functions to style the text as Markdown or to retain HTML elements in the
 #'   text.
+#' @param label Cross-referencing label
 #'
 #' @return An object of class `gt_tbl`.
 #'
@@ -38,12 +39,13 @@
 #' @export
 tab_header <- function(data,
                        title,
-                       subtitle = NULL) {
+                       subtitle = NULL,
+                       label = knitr::opts_current$get("label")) {
 
   # Perform input object validation
   stop_if_not_gt(data = data)
 
-  data %>% dt_heading_title_subtitle(title = title, subtitle = subtitle)
+  data %>% dt_heading_title_subtitle(title = title, subtitle = subtitle, label = label)
 }
 
 #' Add a spanner column label
